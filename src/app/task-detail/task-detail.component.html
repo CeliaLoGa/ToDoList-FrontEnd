@@ -1,0 +1,17 @@
+<div *ngIf="task"> <!-- esto solo solo hace si hay una Task seleccionada -->
+  <h2>{{task.id}} Details</h2>
+  <div><span>id: </span>{{task.id}}</div>
+  <div><span>description: </span>{{task.description}}</div>
+  <div><span>status: </span>{{task.status}}</div>
+
+  <div>
+    <label for="description">Task description: </label>
+    <input id="description" [(ngModel)]="task.description" placeholder="description"> <!-- con esto cambio la descripcion -->
+  </div>
+
+</div>
+
+<div *ngIf> <!-- esto solo solo hace si hay una Task seleccionada -->
+  <h2>Añadir nueva task </h2>
+
+</div>

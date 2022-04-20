@@ -1,0 +1,161 @@
+swagger: "2.0" # primera propiedad obligatoria
+info: # segunda propiedad obligatoria. Contiene los metadatos de la API (toda la información necesaria)
+  description: "This is a simple Tasks List."
+  version: "1.0.0"
+  title: "Tasks API"
+tags: # esto es para generar de forma automatica la documentacion
+- name: "tasks"
+  description: "Tasks management"
+  externalDocs:
+    description: "Find out more"
+    url: "http://swagger.io"
+schemes:
+- "https" #esto es para decir que las peticiones pueden ser tanto por http como por https
+- "http"
+host: "localhost:8080"
+paths: # aqui vienen las peticiones que hacen referencia a las tags
+  /tasks: # endpoint
+    get: # tipo de operacion
+      tags:
+      - "tasks"
+      summary: "Lista las tareas"
+      description: "Lista las tareas"
+      operationId: "getTasks"
+      consumes: # que formato tiene la entrada
+      - "application/json"
+      produces: # que formato tiene la salida
+      - "application/json"
+      responses:
+        "200": # esta es la respuesta cuando todo va bien
+          description: "successful operation"
+          schema:
+            type: "array" # la respuesta es un objeto tipo array
+            items:
+              $ref: "#/definitions/Task"
+    post: # tipo de operacion
+      tags:
+      - "tasks"
+      summary: "Añade una tarea"
+      description: "Añade una tarea"
+      operationId: "addTask"
+      consumes: # que formato tiene la entrada
+      - "application/json"
+      produces: # que formato tiene la salida
+      - "application/json"
+      parameters:
+      - name: "body"
+        in: "body"
+        description: "Task info"
+        required: true # parametro obligatorio
+        schema: {
+            $ref: "#/definitions/Task" # esto no es un array, es un unico objeto
+          }
+      responses:
+        "200": # esta es la respuesta cuando todo va bien
+          description: "successful operation"
+          schema: {
+            $ref: "#/definitions/Task" # esto no es un array, es un unico objeto
+          }
+    put: # tipo de operacion
+      tags:
+      - "tasks"
+      summary: "Actualiza una tarea"
+      description: "Actualiza una tarea"
+      operationId: "updateTask"
+      consumes: # que formato tiene la entrada
+      - "application/json"
+      produces: # que formato tiene la salida
+      - "application/json"
+      parameters:
+      - name: "body"
+        in: "body"
+        description: "Task info"
+        required: true # parametro obligatorio
+        schema: {
+            $ref: "#/definitions/Task" # esto no es un array, es un unico objeto
+          }
+      responses:
+        "200": # esta es la respuesta cuando todo va bien
+          description: "successful operation"
+          schema: {
+            $ref: "#/definitions/Task" # esto no es un array, es un unico objeto
+          }
+    delete: # tipo de operacion
+      tags:
+      - "tasks"
+      summary: "Elimina todas las tareas"
+      description: "Elimina todas las tareas"
+      operationId: "deleteTask"
+      consumes: # que formato tiene la entrada
+      - "application/json"
+      produces: # que formato tiene la salida
+      - "application/json"
+      parameters:
+      - name: "body"
+        in: "body"
+        description: "Task info"
+        required: true # parametro obligatorio
+        schema: {
+            $ref: "#/definitions/Task" # esto no es un array, es un unico objeto
+          }
+      responses:
+        "204": # respuesta vacia
+          description: "successful operation"
+  /taskById: # endpoint
+    get: # tipo de operacion
+      tags:
+      - "taskById"
+      summary: "Muestra una tarea segun su ID"
+      description: "Muestra una tarea segun su ID"
+      operationId: "getTaskById"
+      consumes: # que formato tiene la entrada
+      - "application/json"
+      produces: # que formato tiene la salida
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "query" # los parametros de entrada estan en la propia query
+        description: "Task ID"
+        required: true
+        type: "integer"
+      responses:
+        "200": # esta es la respuesta cuando todo va bien
+          description: "successful operation"
+          schema: {
+            $ref: "#/definitions/Task" # esto no es un array, es un unico objeto
+          }
+    delete: # tipo de operacion
+      tags:
+      - "taskById"
+      summary: "Elimina una tarea"
+      description: "Elimina una tarea"
+      operationId: "deleteTaskById"
+      consumes: # que formato tiene la entrada
+      - "application/json"
+      produces: # que formato tiene la salida
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "query" # los parametros de entrada estan en la propia query
+        description: "Task ID"
+        required: true
+        type: "integer"
+      responses:
+        "204": # respuesta vacia
+          description: "successful operation"
+definitions: # seccion de definiciones donde creamos nuestros objetos a usar
+  Task:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int32" # el entero basico de 32 bits
+      description:
+        type: "string"
+      status:
+        type: "string"
+    xml:
+      name: "Order"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"

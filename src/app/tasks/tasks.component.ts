@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Task } from '../task';
-import { TASKS } from '../tasks-list';
+import { TasksService } from '../Service';
+import { Task } from '../Service';
 
 @Component({
   selector: 'app-tasks',
@@ -10,17 +9,15 @@ import { TASKS } from '../tasks-list';
 })
 export class TasksComponent implements OnInit {
 
-  task: Task = {
-    id: 1,
-    description: "cosas que hacer",
-    status: "pendiente"
-  }
+  public tasks: Task[]=[];
 
-  tasks = TASKS;
-
-  constructor() { }
+  constructor(private tasksService:TasksService) { }
 
   ngOnInit(): void {
+    this.tasksService.getTasks().subscribe((data)=>{
+      console.log(data);
+      this.tasks = data;
+    })
   }
 
   selectedTask?: Task;
@@ -29,3 +26,21 @@ export class TasksComponent implements OnInit {
   }
 
 }
+
+/*
+export class AddNewTask implements OnInit {
+
+  tasks = TASKS;
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  addTask?: Task;
+  onSelect(newtask:Task): void{
+    this.addTask = newtask;
+  }
+
+}
+*/
