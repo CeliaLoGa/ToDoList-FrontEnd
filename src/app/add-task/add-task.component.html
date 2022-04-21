@@ -1,0 +1,17 @@
+<div class="boton">
+  <button type="button" mat-raised-button color="primary" (click)="onCLickAddTask(addNewTaskButton)"> Add New Task </button>
+</div>
+
+<div id="add-new-task-form" class="add-task-form" *ngIf="addNewTaskButton === selectedButton">
+  <form #addTaskForm="ngForm">
+    <li>
+      <label for="description"> Description </label>
+      <input class="form-control" id="description" name="description" requided [(ngModel)]="task.description">
+    </li> <br>
+    <li>
+      <label for="status"> Status </label>
+      <input class="form-control" id="status" name="status" requided [(ngModel)]="task.status">
+    </li> <br>
+    <button type="button" mat-raised-button color="primary" (click)="SubmitAddTaskForm()" (click)="onCLickAddTask(addNewTaskButton)"> Submit </button>
+  </form>
+</div>

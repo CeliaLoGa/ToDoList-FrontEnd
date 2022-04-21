@@ -3,22 +3,23 @@
 /* he hecho cambios en las tasks */
 
 .tasks {
-  margin:auto;
   list-style-type: none;
-  padding: 0;
   background: #a3b4c79c;
-  margin-left: 10px;
+  margin-left: 8%;
   margin-right: 10px;
+  margin-top: 18px;
   margin-bottom: 40px;
   border-radius: 8px;
   float:left;
-  width: 50.6em; /* calc(80%) */
+  width: calc(70%);
+  justify-content: center;
+  align-items: center;
 }
 
 .tasks li {
-  display: block;
+  display: flex;
   float: left;
-  padding: 0 10px;
+  align-content: center;
 }
 
 .tasks button {
@@ -28,7 +29,6 @@
   position: relative;
   left: 0;
   background-color: #EEE;
-  margin: .5em;
   padding: 0;
   border-radius: 4px;
   height: 15em;
@@ -78,6 +78,19 @@
 
 .tasks .description {
   align-self: center;
+}
+
+.tasks .status {
+  position:absolute;
+  bottom:0;
+  display: block;
+  color: white;
+  padding: 0.8em 0 0 0.7em;
+  line-height: 12px;
+  border-radius: 0 0 4px 4px;
+  height: 1.5em;
+  width: 11.3em;
+  background-color: cornflowerblue;
 }
 
 /* estilos del boton externo */

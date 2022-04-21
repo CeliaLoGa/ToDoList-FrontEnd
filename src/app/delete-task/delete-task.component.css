@@ -1,0 +1,114 @@
+/* estilos del deleteButton externo */
+
+
+.deleteButton {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  background: #a3b4c79c;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  float: left;
+}
+
+.deleteButton li {
+  display: block;
+  float: left;
+  padding: 0 10px;
+}
+
+.deleteButton button {
+  vertical-align: text-top;
+  flex: 1;
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  color:#2c3a41;
+  background-color: #EEE;
+  margin: .5em;
+  padding: 0;
+  border-radius: 4px;
+  height: 3em;
+  width: 8em;
+  align-items: stretch;
+  font-size: large;
+}
+
+.deleteButton button:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+  left: .1em;
+}
+
+.deleteButton button:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+
+.deleteButton button.selected {
+  background-color: black;
+  color: white;
+}
+
+.deleteButton button.selected:hover {
+  background-color: #505050;
+  color: white;
+}
+
+.deleteButton button.selected:active {
+  background-color: black;
+  color: white;
+}
+
+.deleteButton .badge {
+  position:absolute;
+  top:0;
+  display: block;
+  color: white;
+  padding: 0.8em 0 0 0.7em;
+  background-color: #405061;
+  line-height: 1em;
+  margin-bottom: 0.8em;
+  border-radius: 4px 4px 0 0;
+  height: 1.5em;
+  width: 11.3em;
+}
+
+.deleteButton .description {
+  align-self: center;
+}
+
+.delete-task-form {
+  list-style-type: none;
+  padding: 12px;
+  background: #a3b4c79c;
+  margin-left: 3%;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  float: left;
+  display:grid;
+  color:#2c3a41;
+  font-weight: bold;
+}
+
+.delete-task-form li {
+  display: grid;
+  float: left;
+  align-content: center;
+  margin-bottom: 10px;
+}
+
+.delete-task-form .button {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  background: #a3b4c79c;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  float: left;
+}

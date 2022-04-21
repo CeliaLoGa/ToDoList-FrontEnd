@@ -1,0 +1,13 @@
+<div class="deleteButton">
+  <button type="button" mat-raised-button color="primary" (click)="onCLickDeleteTask(deleteTaskButton)"> Delete a Task </button>
+</div>
+
+<div id="delete-task-form" class="delete-task-form" *ngIf="deleteTaskButton === selectedButton">
+  <form #deleteTaskForm="ngForm">
+    <li>
+      <label for="id"> ID </label>
+      <input class="form-control" id="id" name="id" requided [(ngModel)]="task.id">
+    </li> <br>
+    <button type="button" mat-raised-button color="primary" (click)="SubmitDeleteTaskForm()" (click)="onCLickDeleteTask(deleteTaskButton)"> Submit </button>
+  </form>
+</div>

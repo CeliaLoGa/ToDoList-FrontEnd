@@ -1,20 +1,12 @@
-<h2>My Tasks</h2>
 
 <ul class="tasks">
   <li *ngFor="let task of tasks"> <!-- *ngFor es la directiva repetidora, repite task para cada elemento de tasks -->
     <button [class.selected]= "task === selectedTask" type="button" (click)="onSelect(task)">
       <span class="badge">{{task.id}}</span>
-      <span class="description"> Description: {{task.description}}</span><br><br>
-      <span class="description"> Status: {{task.status}}</span>
+      <span class="description">{{task.description}}</span><br><br>
+      <span class="status">{{task.status}}</span>
     </button>
   </li>
-</ul>
-
-
-<ul class="boton">
-  <button type="button">
-    <span class="description"> Add new Task </span>
-  </button>
 </ul>
 
 <!--
