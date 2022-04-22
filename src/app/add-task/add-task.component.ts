@@ -15,7 +15,7 @@ export class AddTaskComponent implements OnInit {
   public selectedButton: boolean = true;
   public addNewTaskButton: boolean = false; // inicializo el boton en no seleccionado
 
-  constructor(private renderer: Renderer2, private tasksService: TasksService) { }
+  constructor(private renderer: Renderer2, private tasksService: TasksService) {}
 
   ngOnInit(): void {
   }
@@ -32,6 +32,7 @@ export class AddTaskComponent implements OnInit {
     this.tasksService.addTask(this.task).subscribe((createdTask: Task)=> {
       console.log(createdTask);
     }) // esto añade la nueva task haciendo la peticion de post "addTask"
+     window.location.reload(); // con esto refresco la pagina para que me muestre la nueva task
   }
 
 }

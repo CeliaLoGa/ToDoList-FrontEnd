@@ -1,3 +1,4 @@
+
 <div class="deleteButton">
   <button type="button" mat-raised-button color="primary" (click)="onCLickDeleteTask(deleteTaskButton)"> Delete a Task </button>
 </div>
@@ -6,8 +7,10 @@
   <form #deleteTaskForm="ngForm">
     <li>
       <label for="id"> ID </label>
-      <input class="form-control" id="id" name="id" requided [(ngModel)]="task.id">
+      <input class="form-control" id="param" name="param" requided [(ngModel)]="param">
     </li> <br>
-    <button type="button" mat-raised-button color="primary" (click)="SubmitDeleteTaskForm()" (click)="onCLickDeleteTask(deleteTaskButton)"> Submit </button>
+    <button type="button" mat-raised-button color="primary" (click)="SubmitDeleteTaskForm(param)" (click)="onCLickDeleteTask(deleteTaskButton)"> Delete </button>
+    <br>
+    <button class="deleteAllButton" mat-raised-button color="primary" (click)="SubmitDeleteAllTask()" (click)="onCLickDeleteTask(deleteTaskButton)"> Delete All Tasks </button>
   </form>
 </div>

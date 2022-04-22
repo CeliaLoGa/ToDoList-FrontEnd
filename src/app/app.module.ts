@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { TasksComponent } from './tasks/tasks.component'; // importa los componentes de las Tasks
 
 import { FormsModule } from '@angular/forms';
-import { TasksService } from './Service';
+import { TasksService, TaskByIdService } from './Service';
 import { TaskDetailComponent } from './task-detail/task-detail.component'; // <-- NgModel lives here
 import { HttpClient } from '@angular/common/http';
 import { AddTaskComponent } from './add-task/add-task.component';
@@ -35,7 +35,7 @@ import { DeleteTaskComponent } from './delete-task/delete-task.component';
     BrowserAnimationsModule,
     CommonModule
   ],
-  providers: [TasksService],
+  providers: [TasksService, TaskByIdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
